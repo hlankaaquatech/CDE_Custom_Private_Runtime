@@ -1,5 +1,11 @@
 # THESE STEPS HAVE BEEN TESTED
 
+List all the image repositories.
+curl -u <user id>:<password> https://container.repository.cloudera.com/v2/_catalog
+
+List all tags for a specifc image:
+curl -u <user id>:<password> https://container.repository.cloudera.com/v2/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0-compat/tags/list
+
 Build custom runtime:
 
 cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0
@@ -16,10 +22,10 @@ aws ecr create-repository \
 
 {
     "repository": {
-        "repositoryArn": "arn:aws:ecr:us-east-2:981304421142:repository/cde-custom-runtime-3.5.4",
-        "registryId": "981304421142",
+        "repositoryArn": "arn:aws:ecr:us-east-2:xxxxxxxxx:repository/cde-custom-runtime-3.5.4",
+        "registryId": "xxxxxxxxx",
         "repositoryName": "cde-custom-runtime-3.5.4",
-        "repositoryUri": "981304421142.dkr.ecr.us-east-2.amazonaws.com/cde-custom-runtime-3.5.4",
+        "repositoryUri": "xxxxxxxxx.dkr.ecr.us-east-2.amazonaws.com/cde-custom-runtime-3.5.4",
         "createdAt": "2026-07-22T19:46:06.179000-03:00",
         "imageTagMutability": "MUTABLE",
         "imageScanningConfiguration": {
