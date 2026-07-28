@@ -10,7 +10,7 @@ curl -u "userid":"password" https://container.repository.cloudera.com/v2/_catalo
 curl -u "userid":"password" https://container.repository.cloudera.com/v2/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0-compat/tags/list
 
 
-**Build custom runtime:**
+**BUILD CUSTOM RUNTIME:**
 
 cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0
 
