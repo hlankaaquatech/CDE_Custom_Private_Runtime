@@ -3,11 +3,15 @@
 
 **List all the image repositories.**
 
+```
 curl -u "userid":"password" https://container.repository.cloudera.com/v2/_catalog
+```
 
 **List all tags for a specifc image:**
 
+```
 curl -u "userid":"password" https://container.repository.cloudera.com/v2/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0-compat/tags/list
+```
 
 
 **BUILD CUSTOM RUNTIME:**
