@@ -1,12 +1,14 @@
 # STEPS TO CREATE A CUSTOM RUNTIME IMAGE FOR CDE JOBS
 
+
 **List all the image repositories.**
 
-curl -u <userid>:<password> https://container.repository.cloudera.com/v2/_catalog
+curl -u "userid":"password" https://container.repository.cloudera.com/v2/_catalog
 
 **List all tags for a specifc image:**
 
-curl -u <userid>:<password> https://container.repository.cloudera.com/v2/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0-compat/tags/list
+curl -u "userid":"password" https://container.repository.cloudera.com/v2/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0-compat/tags/list
+
 
 **Build custom runtime:**
 
@@ -69,9 +71,16 @@ aws ecr describe-images \
 Note: The CDE EKS Worker nodes are already provisioned with **AmazonEC2ContainerRegistryReadonly** Policy so no additional IAM Policies need to be defined.
 
 ```
-cde resource create --type="custom-runtime-image"   --image-engine="spark3"   --name="cde-custom-runtime-ecr"    --image="1234567891011.dkr.ecr.us-east-2.amazonaws.com/cde-custom-runtime-3.5.4:v1.0.0" --vcluster-endpoint https://xxxxxx.cde-xxxxxx.se-sandb.xxxxx.cloudera.site/dex/api/v1
+cde resource create \
+  --type="custom-runtime-image" \
+  --image-engine="spark3" \
+  --name="cde-custom-runtime-ecr" \
+  --image="1234567891011.dkr.ecr.us-east-2.amazonaws.com/cde-custom-runtime-3.5.4:v1.0.0" \
+  --vcluster-endpoint https://xxxxxx.cde-xxxxxx.se-sandb.xxxxx.cloudera.site/dex/api/v1
 ```
 
 ```
-cde spark submit  sparkapp.py  --runtime-image-resource-name=cde-custom-runtime-ecr   --vcluster-endpoint https://xxxxxx.cde-xxxxxx.se-sandb.xxxxx.cloudera.site/dex/api/v1
+cde spark submit sparkapp.py \
+  --runtime-image-resource-name=cde-custom-runtime-ecr \
+  --vcluster-endpoint https://xxxxxx.cde-xxxxxx.se-sandb.xxxxx.cloudera.site/dex/api/v1
 ```
