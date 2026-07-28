@@ -1,21 +1,21 @@
 # THESE STEPS HAVE BEEN TESTED
 
-**List all the image repositories.
-**
+**List all the image repositories.**
+
 curl -u <user id>:<password> https://container.repository.cloudera.com/v2/_catalog
 
-**List all tags for a specifc image:
-**
+**List all tags for a specifc image:**
+
 curl -u <user id>:<password> https://container.repository.cloudera.com/v2/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0-compat/tags/list
 
-**Build custom runtime:
-**
+**Build custom runtime:**
+
 cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0
 
 docker-private.infra.cloudera.com/cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0@sha256:0193352e392791b26e8af87cce64925ad9915ab435e0e2623279eca7a29fd909
 
-**Create ECR Private repository:
-**
+**Create ECR Private repository:**
+
 ```
 aws ecr create-repository \
   --repository-name  cde-custom-runtime-3.5.4\
