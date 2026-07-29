@@ -14,7 +14,7 @@ curl -u "userid":"password" https://container.repository.cloudera.com/v2/clouder
 ```
 
 
-**Indetify the image tag:**
+**Identify the image tag:**
 
 cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0
 
