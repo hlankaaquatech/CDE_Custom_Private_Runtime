@@ -14,7 +14,7 @@ curl -u "userid":"password" https://container.repository.cloudera.com/v2/clouder
 ```
 
 
-**BUILD CUSTOM RUNTIME:**
+**Indetify the image tag:**
 
 cloudera/dex/dex-spark-runtime-3.5.4-7.3.2.0
 
@@ -50,6 +50,7 @@ aws ecr get-login-password --region us-east-2 | \
   docker login --username AWS --password-stdin 1234567891011.dkr.ecr.us-east-2.amazonaws.com/cde-custom-runtime-3.5.4 
 ```
 
+**BUILD CUSTOM RUNTIME:**
 ```
 docker build --network=host -t cde-custom-runtime-3.5.4 . -f Dockerfile
 ```
